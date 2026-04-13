@@ -8,6 +8,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--fon
 export const metadata: Metadata = {
   title: "Estudio Jurídico Ferrer",
   description: "Estudio Jurídico Ferrer - Asesoramiento legal de excelencia",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
