@@ -107,7 +107,7 @@ export default function HomeClient({ dbStaff, dbPosts }: { dbStaff: any[], dbPos
               
               <div className="flex flex-col items-center flex-1 relative z-10">
                 <div className="w-32 h-32 relative rounded-full overflow-hidden border border-stone-400/50 mb-6 group-hover:border-white/80 group-hover:scale-110 transition-all duration-700 shadow-inner">
-                  <Image src={member.photo || "/img.png"} alt={member.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" />
+                  <Image src={member.photo || "/img.png"} alt={member.name} fill unoptimized={!!member.photo} className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" />
                 </div>
                 <h3 className="text-xs md:text-sm font-serif text-stone-100 tracking-[0.1em] text-center uppercase leading-snug group-hover:text-white transition-colors duration-300">{member.name}</h3>
                 <p className="text-[10px] text-stone-300 tracking-[0.2em] font-light mt-2 uppercase">{member.role}</p>
@@ -166,7 +166,7 @@ export default function HomeClient({ dbStaff, dbPosts }: { dbStaff: any[], dbPos
             return (
             <article key={i} className="group cursor-pointer flex flex-col">
               <div className="h-40 relative overflow-hidden bg-stone-200">
-                 <Image src={post.photo || "/img.png"} alt={post.title} fill className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                 <Image src={post.photo || "/img.png"} alt={post.title} fill unoptimized={!!post.photo} className="object-cover grayscale hover:grayscale-0 transition-all duration-500" />
               </div>
               
               <div className="bg-[#cc0000] relative flex flex-col items-center text-center p-8 pt-10 flex-1">
@@ -244,7 +244,7 @@ export default function HomeClient({ dbStaff, dbPosts }: { dbStaff: any[], dbPos
             {/* Columna gris: foto + info alineada arriba */}
             <div className="w-full md:w-1/3 bg-[#5c5c5c] p-10 flex flex-col items-center shrink-0 pt-12">
               <div className="w-32 h-32 relative rounded-full overflow-hidden border border-stone-300 mb-6">
-                <Image src={selectedStaff.photo || "/img.png"} alt={selectedStaff.name} fill className="object-cover" />
+                <Image src={selectedStaff.photo || "/img.png"} alt={selectedStaff.name} fill unoptimized={!!selectedStaff.photo} className="object-cover" />
               </div>
               <h3 className="text-sm font-serif text-white tracking-[0.1em] text-center uppercase leading-snug">{selectedStaff.name}</h3>
               <p className="text-[10px] text-stone-300 tracking-[0.2em] font-light mt-3 uppercase">{selectedStaff.role}</p>
