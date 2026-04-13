@@ -100,7 +100,7 @@ export default async function StaffAdmin() {
           </div>
         ) : (
           <ul className="divide-y divide-stone-100">
-            {staff.map((member) => (
+            {staff.map((member: (typeof staff)[number]) => (
               <li
                 key={member.id}
                 className="flex items-center gap-4 px-6 py-4 hover:bg-stone-50 transition-colors"
