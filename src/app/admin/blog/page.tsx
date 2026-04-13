@@ -86,7 +86,7 @@ export default async function BlogAdmin() {
           </div>
         ) : (
           <ul className="divide-y divide-stone-100">
-            {posts.map((post) => (
+            {posts.map((post: (typeof posts)[number]) => (
               <li
                 key={post.id}
                 className="flex items-center gap-4 px-6 py-4 hover:bg-stone-50 transition-colors"

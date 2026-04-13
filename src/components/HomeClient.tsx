@@ -192,7 +192,7 @@ export default function HomeClient({ dbStaff, dbPosts }: { dbStaff: any[], dbPos
         </div>
 
         <div className="flex justify-center mt-12">
-          <a href="#" className="bg-[#cc0000] text-white px-8 py-3 text-xs tracking-wider hover:bg-[#aa0000] transition-colors drop-shadow-md">
+          <a href="/blog" className="bg-[#cc0000] text-white px-8 py-3 text-xs tracking-wider hover:bg-[#aa0000] transition-colors drop-shadow-md">
             VER TODOS LOS ARTÍCULOS
           </a>
         </div>
