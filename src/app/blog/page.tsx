@@ -33,7 +33,7 @@ export default async function BlogPage() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post) => {
+            {posts.map((post: (typeof posts)[number]) => {
               const dateStr = post.createdAt.toLocaleDateString("es-AR", {
                 day: "2-digit",
                 month: "short",
