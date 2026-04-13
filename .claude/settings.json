@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer' -path */prisma/client* -name *.d.ts)",
+      "Bash(find '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer' -name *.d.ts -path *generated*)",
+      "Bash(find '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/.next' -name *.js -path *prisma*)",
+      "Bash(find '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/node_modules/.prisma' -name *.d.ts)",
+      "Bash(find '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/node_modules/prisma' -name CHANGELOG*)",
+      "Bash(find '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/node_modules/prisma' -name *.md)",
+      "Bash(grep -o \"\"Invalid.*invocation[^\"\"]*\"\" '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/node_modules/@prisma/client/runtime/client.js')",
+      "Bash(grep -o Invalid.*invocation '/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/node_modules/@prisma/client/runtime/client.js')",
+      "Bash(npx prisma:*)",
+      "Bash(mkdir -p \"/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/src/app/admin/staff/[id]\")",
+      "Bash(mkdir -p \"/Users/facundoarteagasola/Documents/Sitios/Estudio Ferrer/src/app/admin/blog/[id]\")",
+      "Bash(node -e \"console.log\\(require\\(''crypto''\\).randomBytes\\(32\\).toString\\(''hex''\\)\\)\")"
+    ]
+  }
+}

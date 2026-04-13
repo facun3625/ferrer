@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model StaffMember {
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  cv        String[] 
+  photo     String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Post {
+  id        String   @id @default(uuid())
+  title     String
+  excerpt   String
+  content   String   @default("")
+  photo     String?
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
