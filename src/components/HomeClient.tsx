@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronDown, MapPin, Phone, Mail, Scale, Users, Briefcase, Globe, Leaf, Gavel, X } from "lucide-react";
+import { ChevronDown, MapPin, Phone, Mail, Scale, Users, Briefcase, Globe, Leaf, Gavel, X, Menu } from "lucide-react";
 
 export default function HomeClient({ dbStaff, dbPosts }: { dbStaff: any[], dbPosts: any[] }) {
   const [selectedStaff, setSelectedStaff] = useState<any>(null);
   const [isClosing, setIsClosing] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const closeModal = () => {
     setIsClosing(true);
@@ -32,7 +33,27 @@ export default function HomeClient({ dbStaff, dbPosts }: { dbStaff: any[], dbPos
       </div>
 
       {/* Navbar Overlay */}
-      <nav className="absolute top-10 w-full z-50 pt-8 px-8 flex flex-col md:flex-row justify-center items-center text-stone-100 max-w-[1600px] left-1/2 -translate-x-1/2">
+      <nav className="absolute top-0 md:top-10 w-full z-50 md:pt-8 px-8 flex flex-col md:flex-row justify-center items-center text-stone-100 max-w-[1600px] left-1/2 -translate-x-1/2">
+        {/* Mobile navbar */}
+        <div className="md:hidden w-full flex items-center justify-between py-4">
+          <Image src="/logo.png" alt="Estudio Jurídico Ferrer" width={120} height={87} className="drop-shadow-2xl" />
+          <button onClick={() => setMenuOpen(o => !o)} className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile menu dropdown */}
+        {menuOpen && (
+          <div className="md:hidden w-full bg-stone-900/95 backdrop-blur-sm flex flex-col items-center gap-6 py-8 text-sm font-medium tracking-[0.12em] uppercase">
+            <a href="#" onClick={() => setMenuOpen(false)} className="hover:text-[#cc0000] transition-colors">Inicio</a>
+            <a href="#staff" onClick={() => setMenuOpen(false)} className="hover:text-[#cc0000] transition-colors">Staff</a>
+            <a href="#areas" onClick={() => setMenuOpen(false)} className="hover:text-[#cc0000] transition-colors">Áreas del Derecho</a>
+            <a href="#blog" onClick={() => setMenuOpen(false)} className="hover:text-[#cc0000] transition-colors">Blog</a>
+            <a href="#contacto" onClick={() => setMenuOpen(false)} className="hover:text-[#cc0000] transition-colors">Contactanos</a>
+          </div>
+        )}
+
+        {/* Desktop navbar */}
         <div className="hidden md:flex items-center gap-6 text-base font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] flex-1 justify-end pr-16 tracking-wide">
           <a href="#" className="hover:text-white transition-colors">Inicio</a>
           <span className="text-white/40 font-light">|</span>
@@ -41,13 +62,13 @@ export default function HomeClient({ dbStaff, dbPosts }: { dbStaff: any[], dbPos
           <a href="#areas" className="hover:text-white transition-colors">Áreas del Derecho</a>
         </div>
 
-        <div className="flex-shrink-0 z-50 pb-4 md:pb-0 px-8">
-          <Image 
-            src="/logo.png" 
-            alt="Estudio Jurídico Ferrer" 
-            width={180} 
-            height={130} 
-            className="drop-shadow-2xl hover:scale-105 transition-transform duration-500" 
+        <div className="hidden md:block flex-shrink-0 z-50 pb-4 md:pb-0 px-8">
+          <Image
+            src="/logo.png"
+            alt="Estudio Jurídico Ferrer"
+            width={180}
+            height={130}
+            className="drop-shadow-2xl hover:scale-105 transition-transform duration-500"
           />
         </div>
 
